@@ -52,6 +52,20 @@ type Location {
   lon: Float!
 }
 
+type Query {
+ nearbyProperties(
+   location: LocationInput!, 
+   m: Int, 
+   limit: Int, 
+   nextToken: String
+ ): ModelPropertyPointConnection ,  
+  searchProperties(
+   criteria: CriteriaInput!, 
+   limit: Int, 
+   nextToken: String
+ ): ModelPropertyPointConnection 
+}
+
 
 input LocationInput {
   lat: Float!

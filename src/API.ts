@@ -601,6 +601,26 @@ export type UpdateConvoLinkInput = {
   updatedAt?: string | null,
 };
 
+export type ModelPropertyPointConnection = {
+  __typename: "ModelPropertyPointConnection",
+  items?:  Array<Property | null > | null,
+  total?: number | null,
+  nextToken?: string | null,
+};
+
+export type CriteriaInput = {
+  searchCriteria: string,
+  amenidades?: string | null,
+  tipo?: string | null,
+  recamaras?: number | null,
+  estacionamientos?: number | null,
+  baths?: number | null,
+  terreno_m2?: number | null,
+  construccion_m2?: number | null,
+  precio_from?: number | null,
+  precio_to?: number | null,
+};
+
 export type ModelPropertyFilterInput = {
   id?: ModelIDInput | null,
   nombre?: ModelStringInput | null,
@@ -2516,6 +2536,139 @@ export type UpdateConvoLinkMutation = {
         nextToken?: string | null,
       } | null,
     },
+  } | null,
+};
+
+export type NearbyPropertiesQueryVariables = {
+  location?: LocationInput,
+  m?: number | null,
+  limit?: number | null,
+  nextToken?: string | null,
+};
+
+export type NearbyPropertiesQuery = {
+  nearbyProperties?:  {
+    __typename: "ModelPropertyPointConnection",
+    items?:  Array< {
+      __typename: "Property",
+      id: string,
+      nombre: string,
+      tipo: string,
+      propietario: string,
+      location:  {
+        __typename: "Location",
+        lat: number,
+        lon: number,
+      },
+      descripcion?: string | null,
+      caracteristicas?: string | null,
+      precio?: string | null,
+      recamaras?: number | null,
+      wc?: number | null,
+      baths?: number | null,
+      asesor?: string | null,
+      construccion_m2?: number | null,
+      amenidades?: string | null,
+      estacionamientos?: number | null,
+      localidad?: string | null,
+      inventario?: number | null,
+      propertyGeohash?: string | null,
+      terreno_m2?: number | null,
+      direccion?: string | null,
+      creacion?: string | null,
+      createdAt: string,
+      propertyHashKey?: string | null,
+      cp?: string | null,
+      edad?: number | null,
+      pais?: string | null,
+      entidad?: string | null,
+      status?: string | null,
+      video?: boolean | null,
+      photo?: boolean | null,
+      galery?:  Array< {
+        __typename: "S3Object",
+        bucket: string,
+        region: string,
+        key: string,
+      } | null > | null,
+      updatedAt: string,
+      favs?:  {
+        __typename: "ModelUserFavsConnection",
+        nextToken?: string | null,
+      } | null,
+      conversations?:  {
+        __typename: "ModelConversationConnection",
+        nextToken?: string | null,
+      } | null,
+    } | null > | null,
+    total?: number | null,
+    nextToken?: string | null,
+  } | null,
+};
+
+export type SearchPropertiesQueryVariables = {
+  criteria?: CriteriaInput,
+  limit?: number | null,
+  nextToken?: string | null,
+};
+
+export type SearchPropertiesQuery = {
+  searchProperties?:  {
+    __typename: "ModelPropertyPointConnection",
+    items?:  Array< {
+      __typename: "Property",
+      id: string,
+      nombre: string,
+      tipo: string,
+      propietario: string,
+      location:  {
+        __typename: "Location",
+        lat: number,
+        lon: number,
+      },
+      descripcion?: string | null,
+      caracteristicas?: string | null,
+      precio?: string | null,
+      recamaras?: number | null,
+      wc?: number | null,
+      baths?: number | null,
+      asesor?: string | null,
+      construccion_m2?: number | null,
+      amenidades?: string | null,
+      estacionamientos?: number | null,
+      localidad?: string | null,
+      inventario?: number | null,
+      propertyGeohash?: string | null,
+      terreno_m2?: number | null,
+      direccion?: string | null,
+      creacion?: string | null,
+      createdAt: string,
+      propertyHashKey?: string | null,
+      cp?: string | null,
+      edad?: number | null,
+      pais?: string | null,
+      entidad?: string | null,
+      status?: string | null,
+      video?: boolean | null,
+      photo?: boolean | null,
+      galery?:  Array< {
+        __typename: "S3Object",
+        bucket: string,
+        region: string,
+        key: string,
+      } | null > | null,
+      updatedAt: string,
+      favs?:  {
+        __typename: "ModelUserFavsConnection",
+        nextToken?: string | null,
+      } | null,
+      conversations?:  {
+        __typename: "ModelConversationConnection",
+        nextToken?: string | null,
+      } | null,
+    } | null > | null,
+    total?: number | null,
+    nextToken?: string | null,
   } | null,
 };
 

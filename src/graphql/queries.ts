@@ -2,6 +2,134 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
+export const nearbyProperties = /* GraphQL */ `
+  query NearbyProperties(
+    $location: LocationInput!
+    $m: Int
+    $limit: Int
+    $nextToken: String
+  ) {
+    nearbyProperties(
+      location: $location
+      m: $m
+      limit: $limit
+      nextToken: $nextToken
+    ) {
+      items {
+        id
+        nombre
+        tipo
+        propietario
+        location {
+          lat
+          lon
+        }
+        descripcion
+        caracteristicas
+        precio
+        recamaras
+        wc
+        baths
+        asesor
+        construccion_m2
+        amenidades
+        estacionamientos
+        localidad
+        inventario
+        propertyGeohash
+        terreno_m2
+        direccion
+        creacion
+        createdAt
+        propertyHashKey
+        cp
+        edad
+        pais
+        entidad
+        status
+        video
+        photo
+        galery {
+          bucket
+          region
+          key
+        }
+        updatedAt
+        favs {
+          nextToken
+        }
+        conversations {
+          nextToken
+        }
+      }
+      total
+      nextToken
+    }
+  }
+`;
+export const searchProperties = /* GraphQL */ `
+  query SearchProperties(
+    $criteria: CriteriaInput!
+    $limit: Int
+    $nextToken: String
+  ) {
+    searchProperties(
+      criteria: $criteria
+      limit: $limit
+      nextToken: $nextToken
+    ) {
+      items {
+        id
+        nombre
+        tipo
+        propietario
+        location {
+          lat
+          lon
+        }
+        descripcion
+        caracteristicas
+        precio
+        recamaras
+        wc
+        baths
+        asesor
+        construccion_m2
+        amenidades
+        estacionamientos
+        localidad
+        inventario
+        propertyGeohash
+        terreno_m2
+        direccion
+        creacion
+        createdAt
+        propertyHashKey
+        cp
+        edad
+        pais
+        entidad
+        status
+        video
+        photo
+        galery {
+          bucket
+          region
+          key
+        }
+        updatedAt
+        favs {
+          nextToken
+        }
+        conversations {
+          nextToken
+        }
+      }
+      total
+      nextToken
+    }
+  }
+`;
 export const getProperty = /* GraphQL */ `
   query GetProperty($id: ID!) {
     getProperty(id: $id) {
