@@ -1,0 +1,82 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-safesale-dev-205233-authRole",
+      "UnauthRoleArn": "arn:aws:iam::220965052220:role/amplify-safesale-dev-205233-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::220965052220:role/amplify-safesale-dev-205233-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-safesale-dev-205233-deployment",
+      "UnauthRoleName": "amplify-safesale-dev-205233-unauthRole",
+      "StackName": "amplify-safesale-dev-205233",
+      "StackId": "arn:aws:cloudformation:us-east-1:220965052220:stack/amplify-safesale-dev-205233/0af001a0-61dd-11eb-8016-12e26def3eab",
+      "AmplifyAppId": "d2jcky1gmsyyto"
+    },
+    "categories": {
+      "notifications": {
+        "Pinpoint": {
+          "Name": "safesalenoty-dev",
+          "Id": "7fdc9f9916334dd9ab7404dc658f760a",
+          "Region": "us-east-1"
+        }
+      },
+      "auth": {
+        "safesaleba936a14": {},
+        "userPoolGroups": {}
+      },
+      "function": {
+        "safesaleba936a14PostConfirmation": {
+          "deploymentBucketName": "amplify-safesale-dev-205233-deployment",
+          "s3Key": "amplify-builds/safesaleba936a14PostConfirmation-4d425759323147436958-build.zip"
+        },
+        "safsaleappsynclayer": {
+          "deploymentBucketName": "amplify-safesale-dev-205233-deployment",
+          "s3Key": "amplify-builds/safsaleappsynclayer-LambdaLayerVersionc16cd65d-build.zip"
+        },
+        "sendmessagenoti": {
+          "deploymentBucketName": "amplify-safesale-dev-205233-deployment",
+          "s3Key": "amplify-builds/sendmessagenoti-505a49486f7330505951-build.zip"
+        }
+      }
+    }
+  },
+  "webapp": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-safesale-webapp-102818-authRole",
+      "UnauthRoleArn": "arn:aws:iam::220965052220:role/amplify-safesale-webapp-102818-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::220965052220:role/amplify-safesale-webapp-102818-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-safesale-webapp-102818-deployment",
+      "UnauthRoleName": "amplify-safesale-webapp-102818-unauthRole",
+      "StackName": "amplify-safesale-webapp-102818",
+      "StackId": "arn:aws:cloudformation:us-east-1:220965052220:stack/amplify-safesale-webapp-102818/ddd40f10-2aa7-11ec-a739-0a69a3c6bd59",
+      "AmplifyAppId": "d2jcky1gmsyyto"
+    },
+    "categories": {
+      "notifications": {
+        "Pinpoint": {
+          "Name": "safesalenoty-webapp",
+          "Id": "8722a03762c445e28418954f32151525",
+          "Region": "us-east-1"
+        }
+      },
+      "auth": {
+        "safesaleba936a14": {},
+        "userPoolGroups": {}
+      },
+      "function": {
+        "safesaleba936a14PostConfirmation": {
+          "deploymentBucketName": "amplify-safesale-webapp-102818-deployment",
+          "s3Key": "amplify-builds/safesaleba936a14PostConfirmation-4d425759323147436958-build.zip"
+        },
+        "sendmessagenoti": {
+          "deploymentBucketName": "amplify-safesale-webapp-102818-deployment",
+          "s3Key": "amplify-builds/sendmessagenoti-505a49486f7330505951-build.zip"
+        },
+        "safsaleappsynclayer": {
+          "deploymentBucketName": "amplify-safesale-webapp-102818-deployment",
+          "s3Key": "amplify-builds/safsaleappsynclayer-LambdaLayerVersion8cc35c4b-build.zip"
+        }
+      }
+    }
+  }
+}

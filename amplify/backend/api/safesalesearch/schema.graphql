@@ -1,0 +1,207 @@
+type Property @model @searchable @auth(
+  rules:[
+    {allow: groups, groups:["UserGroupSaleForce"]}
+    {allow: private, operations:[read]},
+    {allow: public, operations:[read], provider:iam}
+  ]
+)
+{
+  id: ID!
+  nombre: String!
+  tipo: String !
+  propietario: String!
+  location:Location!
+  descripcion: String
+  caracteristicas: String 
+  precio: String
+  recamaras: Int
+  wc: Int
+  baths: Int
+  asesor: String
+  construccion_m2: Float
+  amenidades: String
+  estacionamientos: Int
+  localidad: String
+  inventario: Int
+  propertyGeohash: String
+  terreno_m2: Float
+  direccion: String
+  creacion: String
+  createdAt: AWSDateTime!
+  propertyHashKey: String
+  cp: String
+  edad: Int
+  pais: String
+  entidad: String
+  status: String
+  video: Boolean
+  photo: Boolean
+  galery: [S3Object]
+  favs: [UserFavs] @connection(name:"PropertyFav")
+  conversations: [Conversation] @connection(name:"PropertyConv")
+} 
+type S3Object {
+  bucket: String!
+  region: String!
+  key: String!
+ 
+}
+
+type Location {
+  lat: Float!
+  lon: Float!
+}
+
+
+input LocationInput {
+  lat: Float!
+  lon: Float!
+}
+type ModelPropertyPointConnection   @aws_iam @aws_cognito_user_pools{
+ items: [Property]
+ total: Int
+ nextToken: String
+}
+
+
+
+input CriteriaInput {
+  searchCriteria: String!
+  amenidades: String
+  tipo: String
+  recamaras: Int
+  estacionamientos: Int
+  baths: Int
+  terreno_m2: Int
+  construccion_m2: Int
+  precio_from: Int
+  precio_to: Int
+}
+
+type Alert @model 
+  @auth(rules: [{ allow: owner }])  {
+  id: ID!
+  searchCriteria: String!
+  amenidades: String
+  tipo: String
+  recamaras: Int
+  estacionamientos: Int
+  baths: Int
+  terreno_m2: Int
+  construccion_m2: Int
+  precio_from: Int
+  precio_to: Int
+  user: User @connection(name:"UserAlert")
+}
+
+
+
+
+type User @model @searchable
+  @auth(rules: [{  allow: owner},
+   {allow: private, operations:[read], queries: null},
+      { allow: public, provider: apiKey, operations: [create, delete, read, update] }
+    {allow: public, operations:[read], provider:iam, queries: null}])
+{
+  id: ID!
+  username: String!
+  alerts : [Alert]  @connection (name: "UserAlert")
+  favs: [UserFavs] @connection(name:"UserFav")
+  conversations: [ConvoLink] @connection(name: "UserLinks")
+  messages: [Message] @connection(name: "UserMessages")
+  devices: [Device] @connection (name: "UserDevices")
+} 
+
+type Device @model  
+  @auth(rules: [{ allow: owner },{allow: private, operations:[read], queries: null},
+     { allow: public, provider: apiKey, operations: [create, delete, read, update] }
+    {allow: public, operations:[read], provider:iam, queries: null}]) {
+  id: ID!
+  platform: String
+  vendorid: String
+  token: String
+  owner: User @connection(name: "UserDevices")
+}
+
+
+type UserFavs @model   (queries:null)
+  @auth(rules: [{ allow: owner }]){
+    id: ID!
+    property: Property @connection(name:"PropertyFav")
+    user: User @connection(name:"UserFav")
+
+  }
+
+
+
+type Conversation
+  @model(
+    mutations: { create: "createConvo" }
+    queries: { get: "getConvo" }
+    subscriptions: null
+  )
+  @auth(rules: [
+  { allow: owner },
+  { allow: owner, ownerField: "members", operations: [update, read,create] },
+  {allow: public, operations:[create,read], provider:iam, queries: null},
+  { allow: public, provider: apiKey, operations: [create, delete, read, update] },])
+{
+  id: ID!
+  messages: [Message] @connection(name: "ConvoMsgs", sortField: "createdAt")
+  associated: [ConvoLink] @connection(name: "AssociatedLinks")                                                                
+  name: String!
+  type: String!
+  members: [ID!]!
+  property: Property @connection(name:"PropertyConv")
+  schedulerdate : String
+  scheduler: String
+	createdAt: String
+	updatedAt: String
+}
+
+
+type Message 
+  @model(subscriptions: null, queries: null) 
+    @auth(rules: [
+  { allow: owner },
+  {allow: private, operations:[create,update,read]}
+  {allow: public, operations:[create], provider:iam, queries: null}]){
+  id: ID!
+  author: User @connection(name: "UserMessages", keyField: "authorId")
+  authorId: ID !
+  guestmail: String
+  content: String!
+  conversation: Conversation! @connection(name: "ConvoMsgs")
+  messageConversationId: ID!
+  unread: Boolean
+	createdAt: String
+	updatedAt: String
+}
+
+type ConvoLink 
+  @model(
+    mutations: { create: "createConvoLink", update: "updateConvoLink"}
+    subscriptions: null
+  )
+  @auth(rules: [
+  { allow: owner },
+   {allow: private, operations:[create,update,read]}
+  {allow: public, operations:[create], provider:iam, queries: null}
+    { allow: public, provider: apiKey, operations: [create, delete, read, update] }
+  ]) {
+  id: ID!
+  user: User! @connection(name: "UserLinks")
+  convoLinkUserId: ID
+  conversation: Conversation! @connection(name: "AssociatedLinks") 
+  convoLinkConversationId: ID!
+  guestmail: String
+	createdAt: String
+	updatedAt: String
+}
+
+type Subscription {
+  onCreateConvoLink(convoLinkUserId: ID!): ConvoLink
+    @aws_subscribe(mutations: ["createConvoLink"])
+  onCreateMessage(messageConversationId: ID!): Message
+    @aws_subscribe(mutations: ["createMessage"])
+}

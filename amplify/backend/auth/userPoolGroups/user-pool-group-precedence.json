@@ -1,0 +1,36 @@
+[
+    {
+        "groupName": "UserGroupFinalUsers",
+        "precedence": 3
+    },
+    {
+        "groupName": "UserGroupCustomers",
+        "precedence": 2
+    },
+    {
+        "groupName": "UserGroupSaleForce",
+        "precedence": 1,
+        "customPolicies": [
+            {
+                "PolicyName": "safesaleba936a14-admin-group-policy",
+                "PolicyDocument": {
+                    "Version": "2012-10-17",
+                    "Statement": [
+                        {
+                            "Sid": "VisualEditor0",
+                            "Effect": "Allow",
+                            "Action": [
+                                "s3:PutObject",
+                                "s3:GetObject",
+                                "s3:ListBucket",
+                                "s3:DeleteObject",
+                                "s3:PutObjectACL"
+                            ],
+                            "Resource": "arn:aws:s3:::properiesvodstream-dev-input-1lxg6thx/*"
+                        }
+                    ]
+                }
+            }
+        ]
+    }
+]
