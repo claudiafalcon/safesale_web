@@ -1,4 +1,3 @@
-/* tslint:disable */
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
@@ -16,21 +15,6 @@ export const onCreateConvoLink = /* GraphQL */ `
         username
         createdAt
         updatedAt
-        alerts {
-          nextToken
-        }
-        devices {
-          nextToken
-        }
-        favs {
-          nextToken
-        }
-        messages {
-          nextToken
-        }
-        conversations {
-          nextToken
-        }
       }
       conversation {
         id
@@ -41,44 +25,6 @@ export const onCreateConvoLink = /* GraphQL */ `
         scheduler
         createdAt
         updatedAt
-        property {
-          id
-          nombre
-          tipo
-          propietario
-          descripcion
-          caracteristicas
-          precio
-          recamaras
-          wc
-          baths
-          asesor
-          construccion_m2
-          amenidades
-          estacionamientos
-          localidad
-          inventario
-          propertyGeohash
-          terreno_m2
-          direccion
-          creacion
-          createdAt
-          propertyHashKey
-          cp
-          edad
-          pais
-          entidad
-          status
-          video
-          photo
-          updatedAt
-        }
-        messages {
-          nextToken
-        }
-        associated {
-          nextToken
-        }
       }
     }
   }
@@ -99,21 +45,6 @@ export const onCreateMessage = /* GraphQL */ `
         username
         createdAt
         updatedAt
-        alerts {
-          nextToken
-        }
-        devices {
-          nextToken
-        }
-        favs {
-          nextToken
-        }
-        messages {
-          nextToken
-        }
-        conversations {
-          nextToken
-        }
       }
       conversation {
         id
@@ -124,44 +55,6 @@ export const onCreateMessage = /* GraphQL */ `
         scheduler
         createdAt
         updatedAt
-        property {
-          id
-          nombre
-          tipo
-          propietario
-          descripcion
-          caracteristicas
-          precio
-          recamaras
-          wc
-          baths
-          asesor
-          construccion_m2
-          amenidades
-          estacionamientos
-          localidad
-          inventario
-          propertyGeohash
-          terreno_m2
-          direccion
-          creacion
-          createdAt
-          propertyHashKey
-          cp
-          edad
-          pais
-          entidad
-          status
-          video
-          photo
-          updatedAt
-        }
-        messages {
-          nextToken
-        }
-        associated {
-          nextToken
-        }
       }
     }
   }
@@ -209,25 +102,9 @@ export const onCreateProperty = /* GraphQL */ `
       }
       updatedAt
       favs {
-        items {
-          id
-          createdAt
-          updatedAt
-          owner
-        }
         nextToken
       }
       conversations {
-        items {
-          id
-          name
-          type
-          members
-          schedulerdate
-          scheduler
-          createdAt
-          updatedAt
-        }
         nextToken
       }
     }
@@ -276,25 +153,9 @@ export const onUpdateProperty = /* GraphQL */ `
       }
       updatedAt
       favs {
-        items {
-          id
-          createdAt
-          updatedAt
-          owner
-        }
         nextToken
       }
       conversations {
-        items {
-          id
-          name
-          type
-          members
-          schedulerdate
-          scheduler
-          createdAt
-          updatedAt
-        }
         nextToken
       }
     }
@@ -343,25 +204,9 @@ export const onDeleteProperty = /* GraphQL */ `
       }
       updatedAt
       favs {
-        items {
-          id
-          createdAt
-          updatedAt
-          owner
-        }
         nextToken
       }
       conversations {
-        items {
-          id
-          name
-          type
-          members
-          schedulerdate
-          scheduler
-          createdAt
-          updatedAt
-        }
         nextToken
       }
     }
@@ -389,21 +234,6 @@ export const onCreateAlert = /* GraphQL */ `
         username
         createdAt
         updatedAt
-        alerts {
-          nextToken
-        }
-        devices {
-          nextToken
-        }
-        favs {
-          nextToken
-        }
-        messages {
-          nextToken
-        }
-        conversations {
-          nextToken
-        }
       }
     }
   }
@@ -430,21 +260,6 @@ export const onUpdateAlert = /* GraphQL */ `
         username
         createdAt
         updatedAt
-        alerts {
-          nextToken
-        }
-        devices {
-          nextToken
-        }
-        favs {
-          nextToken
-        }
-        messages {
-          nextToken
-        }
-        conversations {
-          nextToken
-        }
       }
     }
   }
@@ -471,21 +286,6 @@ export const onDeleteAlert = /* GraphQL */ `
         username
         createdAt
         updatedAt
-        alerts {
-          nextToken
-        }
-        devices {
-          nextToken
-        }
-        favs {
-          nextToken
-        }
-        messages {
-          nextToken
-        }
-        conversations {
-          nextToken
-        }
       }
     }
   }
@@ -498,66 +298,18 @@ export const onCreateUser = /* GraphQL */ `
       createdAt
       updatedAt
       alerts {
-        items {
-          id
-          searchCriteria
-          amenidades
-          tipo
-          recamaras
-          estacionamientos
-          baths
-          terreno_m2
-          construccion_m2
-          precio_from
-          precio_to
-          createdAt
-          updatedAt
-          owner
-        }
         nextToken
       }
       devices {
-        items {
-          id
-          platform
-          vendorid
-          token
-          createdAt
-          updatedAt
-        }
         nextToken
       }
       favs {
-        items {
-          id
-          createdAt
-          updatedAt
-          owner
-        }
         nextToken
       }
       messages {
-        items {
-          id
-          authorId
-          guestmail
-          content
-          messageConversationId
-          unread
-          createdAt
-          updatedAt
-        }
         nextToken
       }
       conversations {
-        items {
-          id
-          convoLinkUserId
-          convoLinkConversationId
-          guestmail
-          createdAt
-          updatedAt
-        }
         nextToken
       }
     }
@@ -571,66 +323,18 @@ export const onUpdateUser = /* GraphQL */ `
       createdAt
       updatedAt
       alerts {
-        items {
-          id
-          searchCriteria
-          amenidades
-          tipo
-          recamaras
-          estacionamientos
-          baths
-          terreno_m2
-          construccion_m2
-          precio_from
-          precio_to
-          createdAt
-          updatedAt
-          owner
-        }
         nextToken
       }
       devices {
-        items {
-          id
-          platform
-          vendorid
-          token
-          createdAt
-          updatedAt
-        }
         nextToken
       }
       favs {
-        items {
-          id
-          createdAt
-          updatedAt
-          owner
-        }
         nextToken
       }
       messages {
-        items {
-          id
-          authorId
-          guestmail
-          content
-          messageConversationId
-          unread
-          createdAt
-          updatedAt
-        }
         nextToken
       }
       conversations {
-        items {
-          id
-          convoLinkUserId
-          convoLinkConversationId
-          guestmail
-          createdAt
-          updatedAt
-        }
         nextToken
       }
     }
@@ -644,66 +348,18 @@ export const onDeleteUser = /* GraphQL */ `
       createdAt
       updatedAt
       alerts {
-        items {
-          id
-          searchCriteria
-          amenidades
-          tipo
-          recamaras
-          estacionamientos
-          baths
-          terreno_m2
-          construccion_m2
-          precio_from
-          precio_to
-          createdAt
-          updatedAt
-          owner
-        }
         nextToken
       }
       devices {
-        items {
-          id
-          platform
-          vendorid
-          token
-          createdAt
-          updatedAt
-        }
         nextToken
       }
       favs {
-        items {
-          id
-          createdAt
-          updatedAt
-          owner
-        }
         nextToken
       }
       messages {
-        items {
-          id
-          authorId
-          guestmail
-          content
-          messageConversationId
-          unread
-          createdAt
-          updatedAt
-        }
         nextToken
       }
       conversations {
-        items {
-          id
-          convoLinkUserId
-          convoLinkConversationId
-          guestmail
-          createdAt
-          updatedAt
-        }
         nextToken
       }
     }
@@ -723,21 +379,6 @@ export const onCreateDevice = /* GraphQL */ `
         username
         createdAt
         updatedAt
-        alerts {
-          nextToken
-        }
-        devices {
-          nextToken
-        }
-        favs {
-          nextToken
-        }
-        messages {
-          nextToken
-        }
-        conversations {
-          nextToken
-        }
       }
     }
   }
@@ -756,21 +397,6 @@ export const onUpdateDevice = /* GraphQL */ `
         username
         createdAt
         updatedAt
-        alerts {
-          nextToken
-        }
-        devices {
-          nextToken
-        }
-        favs {
-          nextToken
-        }
-        messages {
-          nextToken
-        }
-        conversations {
-          nextToken
-        }
       }
     }
   }
@@ -789,21 +415,6 @@ export const onDeleteDevice = /* GraphQL */ `
         username
         createdAt
         updatedAt
-        alerts {
-          nextToken
-        }
-        devices {
-          nextToken
-        }
-        favs {
-          nextToken
-        }
-        messages {
-          nextToken
-        }
-        conversations {
-          nextToken
-        }
       }
     }
   }
@@ -819,10 +430,6 @@ export const onCreateUserFavs = /* GraphQL */ `
         nombre
         tipo
         propietario
-        location {
-          lat
-          lon
-        }
         descripcion
         caracteristicas
         precio
@@ -848,39 +455,13 @@ export const onCreateUserFavs = /* GraphQL */ `
         status
         video
         photo
-        galery {
-          bucket
-          region
-          key
-        }
         updatedAt
-        favs {
-          nextToken
-        }
-        conversations {
-          nextToken
-        }
       }
       user {
         id
         username
         createdAt
         updatedAt
-        alerts {
-          nextToken
-        }
-        devices {
-          nextToken
-        }
-        favs {
-          nextToken
-        }
-        messages {
-          nextToken
-        }
-        conversations {
-          nextToken
-        }
       }
       owner
     }
@@ -897,10 +478,6 @@ export const onUpdateUserFavs = /* GraphQL */ `
         nombre
         tipo
         propietario
-        location {
-          lat
-          lon
-        }
         descripcion
         caracteristicas
         precio
@@ -926,39 +503,13 @@ export const onUpdateUserFavs = /* GraphQL */ `
         status
         video
         photo
-        galery {
-          bucket
-          region
-          key
-        }
         updatedAt
-        favs {
-          nextToken
-        }
-        conversations {
-          nextToken
-        }
       }
       user {
         id
         username
         createdAt
         updatedAt
-        alerts {
-          nextToken
-        }
-        devices {
-          nextToken
-        }
-        favs {
-          nextToken
-        }
-        messages {
-          nextToken
-        }
-        conversations {
-          nextToken
-        }
       }
       owner
     }
@@ -975,10 +526,6 @@ export const onDeleteUserFavs = /* GraphQL */ `
         nombre
         tipo
         propietario
-        location {
-          lat
-          lon
-        }
         descripcion
         caracteristicas
         precio
@@ -1004,39 +551,13 @@ export const onDeleteUserFavs = /* GraphQL */ `
         status
         video
         photo
-        galery {
-          bucket
-          region
-          key
-        }
         updatedAt
-        favs {
-          nextToken
-        }
-        conversations {
-          nextToken
-        }
       }
       user {
         id
         username
         createdAt
         updatedAt
-        alerts {
-          nextToken
-        }
-        devices {
-          nextToken
-        }
-        favs {
-          nextToken
-        }
-        messages {
-          nextToken
-        }
-        conversations {
-          nextToken
-        }
       }
       owner
     }

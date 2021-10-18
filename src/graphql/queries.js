@@ -1,4 +1,3 @@
-/* tslint:disable */
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
@@ -20,10 +19,6 @@ export const nearbyProperties = /* GraphQL */ `
         nombre
         tipo
         propietario
-        location {
-          lat
-          lon
-        }
         descripcion
         caracteristicas
         precio
@@ -49,18 +44,7 @@ export const nearbyProperties = /* GraphQL */ `
         status
         video
         photo
-        galery {
-          bucket
-          region
-          key
-        }
         updatedAt
-        favs {
-          nextToken
-        }
-        conversations {
-          nextToken
-        }
       }
       total
       nextToken
@@ -83,10 +67,6 @@ export const searchProperties = /* GraphQL */ `
         nombre
         tipo
         propietario
-        location {
-          lat
-          lon
-        }
         descripcion
         caracteristicas
         precio
@@ -112,18 +92,7 @@ export const searchProperties = /* GraphQL */ `
         status
         video
         photo
-        galery {
-          bucket
-          region
-          key
-        }
         updatedAt
-        favs {
-          nextToken
-        }
-        conversations {
-          nextToken
-        }
       }
       total
       nextToken
@@ -173,25 +142,9 @@ export const getProperty = /* GraphQL */ `
       }
       updatedAt
       favs {
-        items {
-          id
-          createdAt
-          updatedAt
-          owner
-        }
         nextToken
       }
       conversations {
-        items {
-          id
-          name
-          type
-          members
-          schedulerdate
-          scheduler
-          createdAt
-          updatedAt
-        }
         nextToken
       }
     }
@@ -209,10 +162,6 @@ export const listPropertys = /* GraphQL */ `
         nombre
         tipo
         propietario
-        location {
-          lat
-          lon
-        }
         descripcion
         caracteristicas
         precio
@@ -238,18 +187,7 @@ export const listPropertys = /* GraphQL */ `
         status
         video
         photo
-        galery {
-          bucket
-          region
-          key
-        }
         updatedAt
-        favs {
-          nextToken
-        }
-        conversations {
-          nextToken
-        }
       }
       nextToken
     }
@@ -275,10 +213,6 @@ export const searchPropertys = /* GraphQL */ `
         nombre
         tipo
         propietario
-        location {
-          lat
-          lon
-        }
         descripcion
         caracteristicas
         precio
@@ -304,18 +238,7 @@ export const searchPropertys = /* GraphQL */ `
         status
         video
         photo
-        galery {
-          bucket
-          region
-          key
-        }
         updatedAt
-        favs {
-          nextToken
-        }
-        conversations {
-          nextToken
-        }
       }
       nextToken
       total
@@ -344,21 +267,6 @@ export const getAlert = /* GraphQL */ `
         username
         createdAt
         updatedAt
-        alerts {
-          nextToken
-        }
-        devices {
-          nextToken
-        }
-        favs {
-          nextToken
-        }
-        messages {
-          nextToken
-        }
-        conversations {
-          nextToken
-        }
       }
     }
   }
@@ -385,12 +293,6 @@ export const listAlerts = /* GraphQL */ `
         createdAt
         updatedAt
         owner
-        user {
-          id
-          username
-          createdAt
-          updatedAt
-        }
       }
       nextToken
     }
@@ -404,66 +306,18 @@ export const getUser = /* GraphQL */ `
       createdAt
       updatedAt
       alerts {
-        items {
-          id
-          searchCriteria
-          amenidades
-          tipo
-          recamaras
-          estacionamientos
-          baths
-          terreno_m2
-          construccion_m2
-          precio_from
-          precio_to
-          createdAt
-          updatedAt
-          owner
-        }
         nextToken
       }
       devices {
-        items {
-          id
-          platform
-          vendorid
-          token
-          createdAt
-          updatedAt
-        }
         nextToken
       }
       favs {
-        items {
-          id
-          createdAt
-          updatedAt
-          owner
-        }
         nextToken
       }
       messages {
-        items {
-          id
-          authorId
-          guestmail
-          content
-          messageConversationId
-          unread
-          createdAt
-          updatedAt
-        }
         nextToken
       }
       conversations {
-        items {
-          id
-          convoLinkUserId
-          convoLinkConversationId
-          guestmail
-          createdAt
-          updatedAt
-        }
         nextToken
       }
     }
@@ -481,21 +335,6 @@ export const listUsers = /* GraphQL */ `
         username
         createdAt
         updatedAt
-        alerts {
-          nextToken
-        }
-        devices {
-          nextToken
-        }
-        favs {
-          nextToken
-        }
-        messages {
-          nextToken
-        }
-        conversations {
-          nextToken
-        }
       }
       nextToken
     }
@@ -521,21 +360,6 @@ export const searchUsers = /* GraphQL */ `
         username
         createdAt
         updatedAt
-        alerts {
-          nextToken
-        }
-        devices {
-          nextToken
-        }
-        favs {
-          nextToken
-        }
-        messages {
-          nextToken
-        }
-        conversations {
-          nextToken
-        }
       }
       nextToken
       total
@@ -556,21 +380,6 @@ export const getDevice = /* GraphQL */ `
         username
         createdAt
         updatedAt
-        alerts {
-          nextToken
-        }
-        devices {
-          nextToken
-        }
-        favs {
-          nextToken
-        }
-        messages {
-          nextToken
-        }
-        conversations {
-          nextToken
-        }
       }
     }
   }
@@ -589,12 +398,6 @@ export const listDevices = /* GraphQL */ `
         token
         createdAt
         updatedAt
-        owner {
-          id
-          username
-          createdAt
-          updatedAt
-        }
       }
       nextToken
     }
@@ -616,10 +419,6 @@ export const getConvo = /* GraphQL */ `
         nombre
         tipo
         propietario
-        location {
-          lat
-          lon
-        }
         descripcion
         caracteristicas
         precio
@@ -645,41 +444,12 @@ export const getConvo = /* GraphQL */ `
         status
         video
         photo
-        galery {
-          bucket
-          region
-          key
-        }
         updatedAt
-        favs {
-          nextToken
-        }
-        conversations {
-          nextToken
-        }
       }
       messages {
-        items {
-          id
-          authorId
-          guestmail
-          content
-          messageConversationId
-          unread
-          createdAt
-          updatedAt
-        }
         nextToken
       }
       associated {
-        items {
-          id
-          convoLinkUserId
-          convoLinkConversationId
-          guestmail
-          createdAt
-          updatedAt
-        }
         nextToken
       }
     }
@@ -699,21 +469,6 @@ export const getConvoLink = /* GraphQL */ `
         username
         createdAt
         updatedAt
-        alerts {
-          nextToken
-        }
-        devices {
-          nextToken
-        }
-        favs {
-          nextToken
-        }
-        messages {
-          nextToken
-        }
-        conversations {
-          nextToken
-        }
       }
       conversation {
         id
@@ -724,44 +479,6 @@ export const getConvoLink = /* GraphQL */ `
         scheduler
         createdAt
         updatedAt
-        property {
-          id
-          nombre
-          tipo
-          propietario
-          descripcion
-          caracteristicas
-          precio
-          recamaras
-          wc
-          baths
-          asesor
-          construccion_m2
-          amenidades
-          estacionamientos
-          localidad
-          inventario
-          propertyGeohash
-          terreno_m2
-          direccion
-          creacion
-          createdAt
-          propertyHashKey
-          cp
-          edad
-          pais
-          entidad
-          status
-          video
-          photo
-          updatedAt
-        }
-        messages {
-          nextToken
-        }
-        associated {
-          nextToken
-        }
       }
     }
   }
@@ -780,22 +497,6 @@ export const listConvoLinks = /* GraphQL */ `
         guestmail
         createdAt
         updatedAt
-        user {
-          id
-          username
-          createdAt
-          updatedAt
-        }
-        conversation {
-          id
-          name
-          type
-          members
-          schedulerdate
-          scheduler
-          createdAt
-          updatedAt
-        }
       }
       nextToken
     }
